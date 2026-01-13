@@ -1,0 +1,307 @@
+:root {
+    --primary-color: #7289da;
+    --secondary-color: #b9bbbe;
+    --background-color: #36393f;
+    --chat-bg: #2f3136;
+    --user-message-bg: #7289da;
+    --bot-message-bg: #40444b;
+    --text-color: #dcddde;
+    --user-text-color: #ffffff;
+    --border-radius: 12px;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    --input-bg: #40444b;
+    --header-bg: #202225;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.chat-container {
+    width: 100%;
+    max-width: 800px;
+    height: 80vh;
+    background-color: var(--chat-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-header {
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    background-color: rgba(114, 137, 218, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.header-text h1 {
+    font-size: 20px;
+    margin-bottom: 4px;
+    color: var(--text-color);
+}
+
+.header-text p {
+    font-size: 14px;
+    opacity: 0.8;
+    color: var(--secondary-color);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--chat-bg);
+}
+
+.message {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: var(--border-radius);
+    position: relative;
+}
+
+.message.user {
+    align-self: flex-end;
+    background-color: var(--user-message-bg);
+    color: var(--user-text-color);
+    border-bottom-right-radius: 4px;
+}
+
+.message.bot {
+    align-self: flex-start;
+    background-color: var(--bot-message-bg);
+    color: var(--text-color);
+    border-bottom-left-radius: 4px;
+}
+
+.message-content p {
+    line-height: 1.5;
+    word-wrap: break-word;
+}
+
+.chat-input-container {
+    padding: 20px;
+    background-color: var(--chat-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chat-form {
+    width: 100%;
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 10px;
+    background-color: var(--input-bg);
+    border-radius: var(--border-radius);
+    padding: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+input[type="text"] {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 12px;
+    font-size: 16px;
+    color: var(--text-color);
+    outline: none;
+}
+
+input[type="text"]::placeholder {
+    color: var(--secondary-color);
+    opacity: 0.7;
+}
+
+.send-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: #677bc4;
+}
+
+.send-button i {
+    font-size: 16px;
+}
+
+/* Loading indicator */
+.message.loading {
+    background-color: var(--bot-message-bg);
+    padding: 12px 16px;
+}
+
+.typing-indicator {
+    display: flex;
+    gap: 4px;
+    padding: 8px;
+}
+
+.typing-indicator span {
+    width: 8px;
+    height: 8px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    animation: typing 1s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--chat-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--input-bg);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color);
+}
+
+/* Remove the old status indicator styles */
+.status-indicator,
+.status-dot,
+.status-text {
+    display: none;
+}
+
+/* Add new session button styles */
+.new-session-btn {
+    background-color: rgba(114, 137, 218, 0.2);
+    color: var(--primary-color);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.new-session-btn:hover {
+    background-color: rgba(114, 137, 218, 0.3);
+}
+
+.new-session-btn i {
+    font-size: 16px;
+}
+
+.new-session-btn.rotating i {
+    animation: rotate 1s linear;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+#activityBox {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--chat-bg);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    box-shadow: var(--shadow);
+    max-width: 300px;
+    display: none;
+}
+
+#activityBox h3 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.activity-suggestion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: var(--input-bg);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.activity-suggestion:hover {
+    background-color: rgba(114, 137, 218, 0.2);
+}
+
+.activity-suggestion img {
+    width: 24px;
+    height: 24px;
+}
+
+.activity-suggestion p {
+    color: var(--text-color);
+    font-size: 14px;
+} 

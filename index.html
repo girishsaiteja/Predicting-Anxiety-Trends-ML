@@ -1,0 +1,85 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Companion</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="header-text">
+                    <h1>AI Assistant</h1>
+                    <p>Mental Health Companion</p>
+                </div>
+            </div>
+            <button id="newSessionBtn" class="new-session-btn">
+                <i class="fas fa-sync-alt"></i>
+                <span>New Session</span>
+            </button>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    <p>Hello! I'm here to help. How can I assist you today?</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="chat-input-container">
+            <form id="chatForm" class="chat-form">
+                <div class="input-wrapper">
+                    <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
+                    <button type="submit" class="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="activityBox">
+        <h3>Suggested Activities</h3>
+        <div class="emotion-categories">
+            <div class="emotion-category">
+                <h4>Anxious</h4>
+                <ul>
+                    <li>4-7-8 breathing</li>
+                    <li>Grounding technique</li>
+                    <li>Progressive muscle relaxation</li>
+                </ul>
+            </div>
+            <div class="emotion-category">
+                <h4>Sad</h4>
+                <ul>
+                    <li>Gratitude journal</li>
+                    <li>Call a friend</li>
+                    <li>Watch favorite movie</li>
+                </ul>
+            </div>
+            <div class="emotion-category">
+                <h4>Angry</h4>
+                <ul>
+                    <li>Brisk walk</li>
+                    <li>Write a letter</li>
+                    <li>Count to 10</li>
+                </ul>
+            </div>
+            <div class="emotion-category">
+                <h4>Overwhelmed</h4>
+                <ul>
+                    <li>Make a to-do list</li>
+                    <li>Take a break</li>
+                    <li>Ask for help</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
