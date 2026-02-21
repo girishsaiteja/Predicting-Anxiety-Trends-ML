@@ -26,7 +26,7 @@ CORS(app, resources={
 })
 
 
-GOOGLE_API_KEY = "AIzaSyA-V0jGajP1ynm7-tf1gShIXIojtx_Af2o"
+GOOGLE_API_KEY = " "
 API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent"
 headers = {
     "Content-Type": "application/json"
